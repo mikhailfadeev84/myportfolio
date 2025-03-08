@@ -1,0 +1,11 @@
+var name = pm.variables.get("name");
+var email_new = pm.variables.get("email_new");
+
+pm.test("Имя пользователя совпадает", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.name).to.eql(name);
+});
+pm.test("Email пользователя совпадает", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.email).to.eql(email_new);
+});
